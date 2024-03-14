@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+:root{
+    --bg-color: #10141E;
+    --bg--light: #161D2F;
+    --white: #FFFFFF;
+    --red: #FC4747;
+    --light-blue: #5A698F;
+    --font-family: Outfit;
+    --font-size: 18px; 
+}
+.search{
+    margin: 20px 0;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--bg--light);
+    padding: 10px;
+    background: url(../../assets/icon-search.svg);
+    background-repeat: no-repeat;
+    background-position:left center;
+    border-bottom: 2px solid var(--bg--light);
+}
+.search::placeholder{
+    font-family: var(--font-family);
+    font-weight: 200;
+    font-size: 20px;
+    padding: 10px 40px;
+}
+.search:focus{
+    border-bottom: 2px solid var(--bg--light);
+    padding-left:10%;
+    color: white;
+    caret-color: var(--red);
+    font-family: var(--font-family);
+}
+h2{
+    font-family: var(--font-family);
+    font-weight: 200;
+    font-size: 40px;
+    padding:-25px 0;
+}

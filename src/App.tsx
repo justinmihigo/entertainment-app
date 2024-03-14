@@ -1,20 +1,16 @@
-import { useState } from 'react'
-import Login from './components/authentication/login'
 import './App.css'
-import Signup from './components/authentication/sign-up'
 import Navbar from './components/navbar/navbar'
-import Card from './components/home/card'
+import Home from './components/home/home'
 
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div>
+      <div className='flexing'>
     <Navbar/>
-    <Card/>
-    <Login/>
-    <Signup/>
+    <Home/>
+    {/* <Test data={datas} /> */}
+    </div>
     </div>
   )
 }
