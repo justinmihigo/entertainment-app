@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+:root{
+    --bg-color: #10141E;
+    --bg--light: #161D2F;
+    --white: #FFFFFF;
+    --red: #FC4747;
+    --light-blue: #5A698F;
+    --font-family: Outfit;
+    --font-size: 18px; 
+}
+.imgCont{
+    width: 25%;
+}
+.imgCont img {
+    width: 100%;
+}
+.desc{
+    display: flex;
+    flex-direction: column;
+    justify-self: start;
+}
+.desc-cont{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.desc-cont img {
+    width: 20px;
+    height: 20px;
+}
