@@ -7,7 +7,7 @@ type propType={
 export const SearchBar: React.FC<propType>= ({title,enableSearch}) => {
   return (
     <div>
-        {enableSearch && <input type='text' placeholder="Search for movies or TV series" className="search"/>}
+        {enableSearch && <input type='text' placeholder={`Search for ${title}` }className="search"/>}
         <h2>{title}</h2>
     </div>
   )

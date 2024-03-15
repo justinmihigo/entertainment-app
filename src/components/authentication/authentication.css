@@ -18,10 +18,12 @@ body{
 }
 .container{
     width: 30%;
-    margin: 0 auto;
     padding: 20px;
+    margin: 10% auto;
     background-color: var(--bg--light);
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
 }
 form{
     display: flex;

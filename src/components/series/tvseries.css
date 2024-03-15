@@ -1,0 +1,13 @@
+.flexing{
+    display: flex;
+    width: 100%;
+    gap: 30px;
+    overflow: hidden;
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    align-items: center;
+    row-gap: 20px;
+}

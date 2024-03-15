@@ -1,7 +1,16 @@
 
+.home{
+    display: flex;
+    gap: 30px;
+}
 .aligning{
     display: flex;
     gap: 20px;
     flex-wrap: nowrap;
     overflow: hidden;
+}
+.recommended{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
