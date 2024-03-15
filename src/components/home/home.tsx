@@ -8,7 +8,7 @@ import img2 from "../../assets/thumbnails/bottom-gear/trending/large.jpg"
 import img3 from "../../assets/thumbnails/undiscovered-cities/trending/large.jpg";
 import { SearchBar } from "./searchBar";
 import Navbar from "../navbar/navbar";
-import { Test } from "./test";
+
 import CardRec from "./cardRec";
 const Home = () => {
 
