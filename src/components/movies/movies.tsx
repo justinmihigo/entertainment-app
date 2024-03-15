@@ -1,4 +1,3 @@
-import React from 'react'
 import Navbar from '../navbar/navbar'
 import CardRec from '../home/cardRec'
 import { SearchBar } from '../home/searchBar'

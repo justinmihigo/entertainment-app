@@ -1,5 +1,4 @@
 import './App.css'
-import Navbar from './components/navbar/navbar'
 import Home from './components/home/home'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import { Tvseries } from './components/series/tv-series'
