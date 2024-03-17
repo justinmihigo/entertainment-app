@@ -40,6 +40,9 @@ input{
     background-color: transparent;
     border-bottom: 1px solid var(--light-blue);
     color: var(--white);
+    padding: 10px 20px;
+    font-family: var(--font-family);
+    font-weight: 200;
 }
 button{
     margin-top: 20px;
@@ -60,9 +63,18 @@ button:hover{
 input:focus{
     outline: none;
     border-bottom:1px solid var(--white);
-    caret-color: white;
+    caret-color: var(--red);
     color:white;
+    padding: 10px 20px;
+    font-family: var(--font-family);
+    font-weight: 200;
 }
 .red{
     color: var(--red);
+}
+
+@media screen and (max-width: 800px){
+    .container {
+        width: 60%;
+    }
 }

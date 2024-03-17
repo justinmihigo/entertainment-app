@@ -7,7 +7,7 @@
 .cards{
     display: flex;
     flex-wrap: wrap; 
-    justify-content: space-around; 
+    column-gap: 30px;
     align-items: center;
     row-gap: 20px;
 }

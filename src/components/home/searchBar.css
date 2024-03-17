@@ -14,7 +14,7 @@
     border: none;
     outline: none;
     border-bottom: 2px solid var(--bg--light);
-    padding: 10px;
+    padding: 10px 40px;
     background: url(../../assets/icon-search.svg);
     background-repeat: no-repeat;
     background-position:left center;
