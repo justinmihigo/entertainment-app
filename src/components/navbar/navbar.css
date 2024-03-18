@@ -24,16 +24,18 @@
 .cont > * {
     width: 20px;
     height: 20px;
-    transition: all 2s;
 }
 
-.cont > *:hover {
-    fill: var(--red);
-    color:#FC4747;
+.cont path:hover{
+    fill:#FC4747;
+    transition: 0.5s ease;
 }
 
-.cont img:visited {
-    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(16deg) brightness(102%) contrast(100%);
+.cont >*:active {
+    .cont svg path{
+       fill: var(--white); 
+    }
+    
 }
 
 .cont {

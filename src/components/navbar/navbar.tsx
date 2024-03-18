@@ -1,9 +1,5 @@
 import React from 'react';
-import bookmarkIcon from '../../assets/icon-nav-bookmark.svg';
-import homeIcon from '../../assets/icon-nav-home.svg';
-import tvIcon from '../../assets/icon-nav-tv-series.svg';
 import avatar from '../../assets/image-avatar.png';
-import movieIcon from '../../assets/icon-nav-movies.svg';
 import moviesLogo from '../../assets/logo.svg';
 import { Link } from 'react-router-dom';
 import "./navbar.css";

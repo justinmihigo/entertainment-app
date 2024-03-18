@@ -9,7 +9,7 @@
     --font-size: 18px; 
 }
 .movieCards{
-    width: 250px;
+    width: 280px;
     position: relative;
 }
 .imgCont{
@@ -53,4 +53,31 @@
     padding:10px;
     text-align: center;
     border-radius:50%;
+}
+.bookmark-icons:hover{
+    background-color: rgb(171, 164, 164, 0.9);
+    svg path{
+       stroke: none;
+       fill: white; 
+    }
+    
+}
+.play {
+    transition: all 2s ease;
+}
+
+.play:hover {
+    cursor: pointer;
+    opacity: 0.9;
+    .playBtn {
+        display: block;
+        background-color: rgb(171, 164, 164, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        padding: 5px 15px;
+        border-radius: 20px;
+        transition: all 2s ease-in-out;
+    }
 }

@@ -2,58 +2,61 @@
 import Card from "./card";
 import "./home.css"
 import datas from "../../data.json";
-
-import img1 from "../../assets/thumbnails/beyond-earth/trending/large.jpg"
-import img2 from "../../assets/thumbnails/bottom-gear/trending/large.jpg"
-import img3 from "../../assets/thumbnails/undiscovered-cities/trending/large.jpg";
 import { SearchBar } from "./searchBar";
 import Navbar from "../navbar/navbar";
 
 import CardRec from "./cardRec";
+import { ChangeEvent, useState } from "react";
 const Home = () => {
-
+    const [searchQuery, setSearchQuery] = useState('');
+    const handleSearch = (e: ChangeEvent<HTMLInputElement>) => { setSearchQuery(e.target.value) }
+    // const [isBookmarked, setIsBookmarked] = useState(false); 
+    // const handleBookmarkToggle = () => {
+    //     setIsBookmarked((prevIsBookmarked) => !prevIsBookmarked);
+    // };
     return (
         <div className="home">
-            <Navbar/>
-            <div>
-            <SearchBar title='Trending' enableSearch={true} />
-            <div className="aligning">
-                <Card
-                    title={datas[0].title}
-                    img={img1}
-                    year={datas[0].year}
-                    rating={datas[0].rating}
-                    isTrending={datas[0].isTrending}
-                />
-                <Card
-                    title={datas[1].title}
-                    img={img2}
-                    year={datas[1].year}
-                    rating={datas[1].rating}
-                    isTrending={datas[1].isTrending}
-                />
-                <Card
-                    title={datas[2].title}
-                    img={img3}
-                    year={datas[2].year}
-                    rating={datas[2].rating}
-                    isTrending={datas[2].isTrending}
-                />
+            <Navbar />
+            <div className="behind">
+                <div className="remove"><SearchBar title='Trending' enableSearch={true} onchange={handleSearch} /></div>
+                <div className="aligning">
+                    {datas.filter(item => item.isTrending)
+                        .map((item, index) => {
+
+                            return (<Card
+                                key={index}
+                                title={item.title}
+                                img={item.thumbnail.regular.large}
+                                year={item.year}
+                                rating={item.rating}
+                                isBookmarked={item.isBookmarked}
+                                category={item.category}
+                                isTrending={item.isTrending}
+                                // onBookmarkToggle={handleBookmarkToggle}
+                            />
+                            )
+                        })}
+                </div>
+                <SearchBar title='Recommended' enableSearch={false} />
+                <div className="recommended">
+                    {datas.slice(2).filter(dataItem => {
+                        return searchQuery === '' ? dataItem : dataItem.title.toLowerCase().includes(searchQuery);
+                    })
+                        .map((dataItem, index) => (
+                            <CardRec
+                                key={index}
+                                title={dataItem.title}
+                                img={dataItem.thumbnail.regular.medium}
+                                year={dataItem.year}
+                                rating={dataItem.rating}
+                                isBookmarked={dataItem.isBookmarked}
+                                category={dataItem.category}
+                                isTrending={dataItem.isTrending}
+                                // onBookmarkToggle={handleBookmarkToggle}
+                            />
+                        ))}
+                </div>
             </div>
-            <SearchBar title='Recommended' enableSearch={false} />
-            <div className="recommended">
-                {datas.slice(2).map((dataItem, index) => (
-                    <CardRec
-                        key={index}
-                        title={dataItem.title}
-                        img={dataItem.thumbnail.regular.medium}
-                        year={dataItem.year}
-                        rating={dataItem.rating}
-                        isTrending={dataItem.isTrending}
-                    />
-                ))}
-            </div>
-        </div>
         </div>
     )
 }
