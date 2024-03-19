@@ -1,5 +1,8 @@
 @import "./components/navbar/navbar.css";
 @import "./components/home/card.css";
+body{
+  width: 100%;
+}
 @media screen and (max-width: 768px) {
   .section-first,.contain,.cont{
        flex-direction: row;

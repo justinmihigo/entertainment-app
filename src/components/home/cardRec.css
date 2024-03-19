@@ -9,7 +9,7 @@
     --font-size: 18px; 
 }
 .movieCards{
-    width: 280px;
+    width: 300px;
     position: relative;
 }
 .imgCont{
@@ -80,4 +80,11 @@
         border-radius: 20px;
         transition: all 2s ease-in-out;
     }
+}
+@media screen and (max-width:770px) {
+    .movieCards{
+        width: 95%;
+        margin: 0 auto;
+    }
+    
 }

@@ -37,7 +37,9 @@
     }
     
 }
-
+.active svg path{
+    fill: white;
+}
 .cont {
     display: flex;
     flex-direction: column;
@@ -70,16 +72,23 @@
 @media screen and (max-width: 768px) {
 
     .section-first,
-    .contain,
     .cont {
         flex-direction: row;
         justify-self: center;
         align-items: center;
     }
-
+    .contain{
+        flex-direction: row;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left:0;
+        right: 0;
+    }
+    
     .section-first {
         margin:auto;
-        width: 90%;
+        /* width: 90%; */
         align-items: center;
         justify-content: space-around;
     }

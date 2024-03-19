@@ -3,6 +3,7 @@ import "./cardRec.css"
 import movies from "../../assets/icon-category-movie.svg";
 import series from "../../assets/icon-category-tv.svg";
 import play from "../../assets/icon-play.svg";
+import data from "../../data.json";
 // import imgcard from "../../assets/thumbnails/bottom-gear/trending/large.jpg";
 interface TypeProps{
     title: string,
@@ -18,7 +19,14 @@ interface TypeProps{
 const CardRec: React.FC<TypeProps>= ({title,img,year,rating, isBookmarked,category}:TypeProps) => {
     const [bookmarkStatus, setBoomarkStatus]=useState(isBookmarked);
  const handleClick=()=>{
-    setBoomarkStatus(!isBookmarked);
+    const updatedData=data.map(item=>{
+        if(item.title=title){
+            return {...item,isBookmarked:!bookmarkStatus}
+        }
+        return item;
+    });
+    setBoomarkStatus(!bookmarkStatus);
+    localStorage.setItem('updatedData',JSON.stringify(updatedData));
  }
     return (
         <div>

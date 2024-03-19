@@ -6,17 +6,16 @@
 
 .aligning {
     position: relative;
-    z-index: -1;
     display: flex;
     gap: 30px;
     flex-wrap: nowrap;
     overflow: hidden;
-    animation: autoslide infinite 10s ease;
+    /* animation: autoslide infinite 10s ease; */
 }
 
-/* .behind:not(.remove) {
-    z-index: -1;
-} */
+.behind{
+    width:90%;
+}
 .behind:hover {
     .aligning:hover {
         animation-name: none;
@@ -48,8 +47,8 @@
 .recommended {
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: center; */
+    justify-content: center;
     gap: 50px;
     row-gap: 30px;
-    margin-right: 30px;
+    margin: 30px;
 }
