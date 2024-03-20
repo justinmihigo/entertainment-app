@@ -9,7 +9,7 @@
     --font-size: 18px; 
 }
 .movieCards{
-    width: 300px;
+    width: 270px;
     position: relative;
 }
 .imgCont{
@@ -32,7 +32,7 @@
 .titles{
     display: flex;
     justify-self: start;
-    font-size: 20px;
+    font-size: 1em;
     font-weight: 400;
     font-family: var(--font-family);
 }
@@ -81,7 +81,41 @@
         transition: all 2s ease-in-out;
     }
 }
-@media screen and (max-width:770px) {
+@media screen  and (max-width:1048px){
+    .movieCards{
+        width: 25vw;
+    }
+}
+@media screen  and (max-width:948px){
+    .movieCards{
+        width: 24vw;
+    }
+}
+@media screen  and (max-width:841px){
+    .movieCards{
+        width: 35vw;
+    }
+}
+@media screen and (max-width:767px) {
+    .movieCards{
+        width: 39vw;
+        /* margin: 0 auto; */
+    }
+    
+}
+@media screen  and (max-width:717px){
+    .movieCards{
+        width: 37vw;
+    }
+}
+@media screen and (max-width:538px) {
+    .movieCards{
+        width: 35vw;
+        margin: 0 auto;
+    }
+    
+}
+@media screen and (max-width:500px) {
     .movieCards{
         width: 95%;
         margin: 0 auto;

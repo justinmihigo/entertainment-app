@@ -2,15 +2,17 @@
     display: flex;
     gap: 30px;
     overflow: hidden;
+    display: relative;
 }
 
 .aligning {
-    position: relative;
+    position: absolute;
+    z-index: -1;
     display: flex;
     gap: 30px;
     flex-wrap: nowrap;
     overflow: hidden;
-    /* animation: autoslide infinite 10s ease; */
+    animation: autoslide infinite 10s ease; 
 }
 
 .behind{
@@ -18,6 +20,8 @@
 }
 .behind:hover {
     .aligning:hover {
+        position:absolute;
+        z-index:1;
         animation-name: none;
     }
 }
@@ -45,10 +49,16 @@
 }
 
 .recommended {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 50px;
     row-gap: 30px;
-    margin: 30px;
+    /* margin: 0 10px; */
+}
+.positioning{
+    position: relative;
+    top: 300px;
+    bottom: 10px;
 }

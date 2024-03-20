@@ -22,7 +22,6 @@ const Home = () => {
                 <div className="aligning">
                     {datas.filter(item => item.isTrending)
                         .map((item, index) => {
-
                             return (<Card
                                 key={index}
                                 title={item.title}
@@ -32,29 +31,32 @@ const Home = () => {
                                 isBookmarked={item.isBookmarked}
                                 category={item.category}
                                 isTrending={item.isTrending}
-                                // onBookmarkToggle={handleBookmarkToggle}
+                            // onBookmarkToggle={handleBookmarkToggle}
                             />
                             )
                         })}
                 </div>
-                <SearchBar title='Recommended' enableSearch={false} />
-                <div className="recommended">
-                    {datas.slice(2).filter(dataItem => {
-                        return searchQuery === '' ? dataItem : dataItem.title.toLowerCase().includes(searchQuery);
-                    })
-                        .map((dataItem, index) => (
-                            <CardRec
-                                key={index}
-                                title={dataItem.title}
-                                img={dataItem.thumbnail.regular.medium}
-                                year={dataItem.year}
-                                rating={dataItem.rating}
-                                isBookmarked={dataItem.isBookmarked}
-                                category={dataItem.category}
-                                isTrending={dataItem.isTrending}
+                <div className="positioning">
+                    <SearchBar title='Recommended' enableSearch={false} />
+                    <div className="recommended">
+                        {datas.slice(2).filter(dataItem => {
+                            return searchQuery === '' ? dataItem : dataItem.title.toLowerCase().includes(searchQuery);
+                        })
+                            .map((dataItem, index) => (
+                                <CardRec
+                                    key={index}
+                                    id={index}
+                                    title={dataItem.title}
+                                    img={dataItem.thumbnail.regular.medium}
+                                    year={dataItem.year}
+                                    rating={dataItem.rating}
+                                    isBookmarked={dataItem.isBookmarked}
+                                    category={dataItem.category}
+                                    isTrending={dataItem.isTrending}
                                 // onBookmarkToggle={handleBookmarkToggle}
-                            />
-                        ))}
+                                />
+                            ))}
+                    </div>
                 </div>
             </div>
         </div>
