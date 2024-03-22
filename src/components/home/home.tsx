@@ -6,22 +6,57 @@ import { SearchBar } from "./searchBar";
 import Navbar from "../navbar/navbar";
 
 import CardRec from "./cardRec";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, Key, useEffect, useState } from "react";
 const Home = () => {
     const [searchQuery, setSearchQuery] = useState('');
+    const [items, setItems]= useState<any>([]);
     const handleSearch = (e: ChangeEvent<HTMLInputElement>) => { setSearchQuery(e.target.value) }
-    // const [isBookmarked, setIsBookmarked] = useState(false); 
-    // const handleBookmarkToggle = () => {
-    //     setIsBookmarked((prevIsBookmarked) => !prevIsBookmarked);
-    // };
+    // useEffect(() =>{
+    //     localStorage.setItem('allDatas', JSON.stringify(datas));
+    // },[]);
+    useEffect(()=>{
+        
+        const allDatas = JSON.parse(localStorage.getItem('allDatas')!);
+        if(!allDatas){
+            localStorage.setItem('allDatas', JSON.stringify(datas));
+        }
+        if(allDatas){
+            setItems(allDatas);
+        }
+    },[]);
+    // const handleBookmarkToggle=()=>{
+    //     const newItems= items.filter((item: { title: string; })=>{
+    //         return item.title.toLowerCase();
+    //     })
+    //     .map((item: { title: string; isBookmarked: boolean; })=>{
+    //         if(item.title.toLowerCase()){
+    //             item.isBookmarked=!item.isBookmarked;
+    //         }
+    //         return item;
+    //     })
+    //     setItems(newItems);
+    // }
+    const handleBookmarkToggle = (title: string) => {
+        const newItems = items.map((item: any) => {
+            if (item.title === title) {
+                return { ...item, isBookmarked: !item.isBookmarked };
+            
+            }
+            return item;
+        });
+        setItems(newItems);
+        localStorage.setItem('allDatas', JSON.stringify(newItems));
+    }
+
+    
     return (
         <div className="home">
             <Navbar />
             <div className="behind">
                 <div className="remove"><SearchBar title='Trending' enableSearch={true} onchange={handleSearch} /></div>
                 <div className="aligning">
-                    {datas.filter(item => item.isTrending)
-                        .map((item, index) => {
+                    {items.filter((item: { isTrending: any; }) => item.isTrending)
+                        .map((item: { title: string; thumbnail: { regular: { large: string | undefined; }; }; year: number; rating: string; isBookmarked: boolean; category: string; isTrending: boolean; }, index: Key | null | undefined) => {
                             return (<Card
                                 key={index}
                                 title={item.title}
@@ -39,10 +74,10 @@ const Home = () => {
                 <div className="positioning">
                     <SearchBar title='Recommended' enableSearch={false} />
                     <div className="recommended">
-                        {datas.slice(2).filter(dataItem => {
+                        {items.slice(2).filter((dataItem: { title: string; }) => {
                             return searchQuery === '' ? dataItem : dataItem.title.toLowerCase().includes(searchQuery);
                         })
-                            .map((dataItem, index) => (
+                            .map((dataItem: { title: string; thumbnail: { regular: { medium: string | undefined; }; }; year: number; rating: string; isBookmarked: boolean; category: string; isTrending: boolean; }, index: Key | null | undefined) => (
                                 <CardRec
                                     key={index}
                                     id={index}
@@ -53,7 +88,7 @@ const Home = () => {
                                     isBookmarked={dataItem.isBookmarked}
                                     category={dataItem.category}
                                     isTrending={dataItem.isTrending}
-                                // onBookmarkToggle={handleBookmarkToggle}
+                                onBookmarkToggle={()=>handleBookmarkToggle(dataItem.title)}
                                 />
                             ))}
                     </div>

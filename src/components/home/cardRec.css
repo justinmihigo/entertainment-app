@@ -12,6 +12,26 @@
     width: 270px;
     position: relative;
 }
+.movieCards:hover{
+    scale: 1.1;
+    animation: shaking 1s ease;
+    transition: 2s ease-in-out;
+}
+@keyframes shaking {
+    0%{
+        transform: rotate(10deg);
+    }
+    30%{
+        transform: rotate(-5deg);
+    }
+    60%{
+        transform: rotate(5deg);
+    }
+    100%{
+        transform: rotate(0);
+    }
+    
+}
 .imgCont{
     width: 100%;
 }
@@ -63,7 +83,7 @@
     
 }
 .play {
-    transition: all 2s ease;
+    transition: all 1s ease;
 }
 
 .play:hover {
@@ -80,6 +100,7 @@
         border-radius: 20px;
         transition: all 2s ease-in-out;
     }
+    
 }
 @media screen  and (max-width:1048px){
     .movieCards{

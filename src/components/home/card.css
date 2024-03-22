@@ -14,14 +14,16 @@
     width: 100%;
     position: relative;
 }
-
+.movieCard:hover{
+    scale: 0.9;
+    transition: 1s ease;
+}
 .play {
     transition: all 2s ease;
 }
 
 .play:hover {
     cursor: pointer;
-    opacity: 0.9;
     .playBtn {
         display: block;
         background-color: rgb(171, 164, 164, 0.4);
@@ -89,6 +91,7 @@
 
 .bookmark-icon {
     position: absolute;
+    z-index: 1;
     top: 0;
     right: 0;
     margin: 10px;

@@ -53,6 +53,7 @@
     height: 30px;
     border-radius: 50%;
     margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 #avatar img {
@@ -60,7 +61,15 @@
     height: 100%;
 }
 
-
+#avatar img:hover{
+    cursor: pointer;
+}
+.user:hover{
+    transition: 2s ease;
+    .auth{
+        display: block;
+    }
+}
 .section-first {
     display: flex;
     flex-direction: column;
@@ -68,7 +77,21 @@
     gap: 60px;
     align-items: center;
 }
-
+.auth{
+    display: none;
+    background-color: var(--white);
+    padding: 10px;
+    border-radius: 10px;
+    scale: 0.9;
+}
+.auth >*{
+    text-decoration: none;
+}
+.auth .link{
+    text-decoration: none;
+    color:var(--red);
+    font-size: 1em;
+}
 @media screen and (max-width: 768px) {
 
     .section-first,
